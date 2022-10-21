@@ -1,0 +1,32 @@
+.kanban {
+   display: flex;
+   padding: 30px;
+   width: 750px;
+   background: #009578; 
+   border-radius: 5px;   
+}
+
+.kanban * {
+    font-family: sans-serif;
+}
+
+.kanban__column {
+    flex: 1;
+}
+
+.kanban__column:not(:last-child){
+    margin-right: 30px;
+}
+.kanban__column-title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: white;
+    user-select: none; 
+    /* permite o usuário selecioar o texto */
+}
+.kanban__item-input{
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 5px;
+}
