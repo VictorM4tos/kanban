@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,500&display=swap" rel="stylesheet">
+    <link rel="icons" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbE4xM3JzRmRQRTdTOXJnU2VSVDlaV3pJbTRVQXxBQ3Jtc0traTVIWFJHeEJlRmZPYjBjNF8yc0xnaUlIa3ZNU1FpUHk1LWlTREN5Q0YtVUJ0Zjc5RG5WQW1XcjhBZnBJRGRDenhVQU5wYmlTVDJ5SFNmdU5BM1dGMDlzQ2UwTEoxRTAtM2kwcFVUcmdrZVFRMjkwSQ&q=https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffont-awesome%2F4.7.0%2Fcss%2Ffont-awesome.min.css&v=4CUa9R_N4eQ">
 </head>
 <body>
     <div class="kanban">
@@ -17,11 +18,15 @@
             <div class="kanban__items">
                 <!--conteudo editavel-->
                 <div contenteditable class="kanban__item-input">ADD Nova Tarefa</div>
+
                 <div class="kanban__dropzone">
-                    <div class="card" draggable="true">criar kanban</div>
+                    <div class="card" draggable="true">
+                        <div class="content">criar kanban</div>
+                    </div>                    
                 </div>
+                <button class="kanban__add-item" type="button">+ Add</button>
             </div>
-            <div><button class="kanban__add-item" type="button">+ Add</button></div>
+
 
         </div>
         <div class="kanban__column">
@@ -30,7 +35,9 @@
                 <!--conteudo editavel-->
                 <div contenteditable class="kanban__item-input">ADD Nova Tarefa</div>
                 <div class="kanban__dropzone">
-                    <div class="card" draggable="true">fazendo kanban</div>
+                    <div class="card" draggable="true">
+                        <div class="content">fazendo kanban</div>
+                    </div>
                 </div>
             </div>
             <button class="kanban__add-item" type="button">+ Add</button>
@@ -42,11 +49,12 @@
                 <!--conteudo editavel-->
                 <div contenteditable class="kanban__item-input">ADD Nova Tarefa</div>
                 <div class="kanban__dropzone">
-                    <div class="card" draggable="true"> kanban finalizado</div>
+                    <div class="card" draggable="true">
+                        <div class="content"> kanban finalizado</div>
+                    </div>
                 </div>
             </div>
             <button class="kanban__add-item" type="button">+ Add</button>
-
         </div>
     </div>
     <script src="./main.js" type="module"></script>
