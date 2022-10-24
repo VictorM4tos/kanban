@@ -5,5 +5,5 @@ console.log("Requisição App: ok");
 
 const PORT = 3030;
 app.listen(PORT, () => {
-  console.log("Servidor Rodando na ${PORT}");
+  console.log(`Servidor Rodando na ${PORT}`);
 });
