@@ -5,18 +5,24 @@
    background: #009578; 
    border-radius: 5px;  
    justify-content: center;
+   margin: 0;
 }
 
 .kanban * {
     font-family: 'Roboto', sans-serif;
 }
 
-/* .kanban__column {
+.kanban__column {
    flex: 1;
-} */
-
-.kanban__column:not(:last-child){
-    margin-right: 30px;
+}
+/* not(:last-child) */
+.kanban__column{
+    display: block;
+    width: auto;
+    margin: 10px;
+    background-color: #4cd137;
+    border-radius: 12px;
+    padding: 30px;
 }
 .kanban__column-title {
     margin-bottom: 20px;
@@ -26,22 +32,35 @@
     user-select: none; 
     /* permite o usuário selecioar o texto */
 }
-.kanban__item-input {
+
+.kanban__New-item{
     padding: 10px 15px;
     box-sizing: border-box;
     background: white;
     border-radius: 5px;
-    cursor: pointer;
+    
+}
+
+.kanban__item-input {
+    width: 85%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 5px;
+
     
 }
 
 .card {
+    width:100%;
     padding: 10px 15px;
     box-sizing: border-box;
     background: white;
-    border-radius: 5px;
-    cursor: pointer;    
-    margin: 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .kanban__items{
@@ -50,7 +69,6 @@
 
 .kanban__dropzone {
     height: auto;
-    margin: 10px;
     transition: background 0.15s, height 0.15s;
     display: flex;
     flex-direction: column;
@@ -58,6 +76,8 @@
     padding: 10px;
     min-width: 200px;
     border-radius: 5px; 
+    justify-content: space-between;
+    align-items: center;
       
 }
 
@@ -68,17 +88,33 @@
     ;
 } */
 
-.kanban__add-item{
-    width: 100%;
-    padding: 10px 0;
+.kanban__add-item{    
+    padding: 10px 10px;
     font-size: 16px;
-    color: white;
+    color: black;
     background: rgba(0, 0, 0, 0.1);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
+.content{
+    width: 100%;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 5px;
+
+}
+
+.btnacao{
+    padding: 5%;
+    font-size: 10px;
+    color: black;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .highlight{
 background-color: grey;
 }

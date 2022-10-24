@@ -1,62 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Kanban</title>
-    <link href="./main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="icons" href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbE4xM3JzRmRQRTdTOXJnU2VSVDlaV3pJbTRVQXxBQ3Jtc0traTVIWFJHeEJlRmZPYjBjNF8yc0xnaUlIa3ZNU1FpUHk1LWlTREN5Q0YtVUJ0Zjc5RG5WQW1XcjhBZnBJRGRDenhVQU5wYmlTVDJ5SFNmdU5BM1dGMDlzQ2UwTEoxRTAtM2kwcFVUcmdrZVFRMjkwSQ&q=https%3A%2F%2Fcdnjs.cloudflare.com%2Fajax%2Flibs%2Ffont-awesome%2F4.7.0%2Fcss%2Ffont-awesome.min.css&v=4CUa9R_N4eQ">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,500&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
+
 <body>
     <div class="kanban">
         <div class="kanban__column">
             <div class="kanban__column-title">Not started</div>
             <div class="kanban__items">
                 <!--conteudo editavel-->
-                <div contenteditable class="kanban__item-input">ADD Nova Tarefa</div>
-
+                <div class="kanban__New-item">
+                    <input type="text" class="kanban__item-input" placeholder="ADD Nova Tarefa1">
+                    <button class="btnacao"> <i class="fa fa-plus"></i></button>
+                </div>
                 <div class="kanban__dropzone">
                     <div class="card" draggable="true">
-                        <div class="content">criar kanban</div>
-                    </div>                    
-                </div>
-                <button class="kanban__add-item" type="button">+ Add</button>
+                        <div class="content">A fazer
+                            <button class="btnacao">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btnacao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div> 
             </div>
-
-
         </div>
         <div class="kanban__column">
             <div class="kanban__column-title">Making</div>
             <div class="kanban__items">
                 <!--conteudo editavel-->
-                <div contenteditable class="kanban__item-input">ADD Nova Tarefa</div>
+                <div class="kanban__New-item">
+                    <input type="text" class="kanban__item-input" placeholder="ADD Nova Tarefa1">
+                    <button class="btnacao"> <i class="fa fa-plus"></i></button>
+                </div>
                 <div class="kanban__dropzone">
                     <div class="card" draggable="true">
-                        <div class="content">fazendo kanban</div>
+                        <div class="content">fazendo kanban
+                            <button class="btnacao">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btnacao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button class="kanban__add-item" type="button">+ Add</button>
-
         </div>
         <div class="kanban__column">
             <div class="kanban__column-title">Finish</div>
             <div class="kanban__items">
                 <!--conteudo editavel-->
-                <div contenteditable class="kanban__item-input">ADD Nova Tarefa</div>
+                <div class="kanban__New-item">
+                    <input type="text" class="kanban__item-input" placeholder="ADD Nova Tarefa1">
+                    <button class="btnacao"> <i class="fa fa-plus"></i></button>
+                </div>
                 <div class="kanban__dropzone">
                     <div class="card" draggable="true">
-                        <div class="content"> kanban finalizado</div>
+                        <div class="content">Finalizado
+                            <button class="btnacao">
+                                <i class="fa fa-pencil"></i>
+                            </button>
+                            <button class="btnacao">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <button class="kanban__add-item" type="button">+ Add</button>
         </div>
+        <button class="kanban__add-item" type="button">+ Add</button>
+    </div>
     </div>
     <script src="./main.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
