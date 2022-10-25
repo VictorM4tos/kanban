@@ -11,5 +11,6 @@ router.get("/all", controllers.getAll);
 router.get("/:id", controllers.findID);
 router.post("/create", controllers.createtarefa);
 router.patch("/:id", controllers.updateTarefa);
+router.delete("/:id", controllers.deleteTarefa);
 
 module.exports = router;

@@ -61,11 +61,26 @@ const updateTarefa = async (req, res) => {
   }
 };
 
+// deletar tarefa pelo ID
+const deleteTarefa = async (req, res) => {
+  try {
+    const localizaTarefa = req.params.id;
+    const excluirTareda = await tarefasSchema.findOneAndDelete(localizaTarefa);
+    res.status(201).send({
+      me: "tarefa Excluida",
+      excluirTareda,
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
 module.exports = {
   getAll,
   createtarefa,
   findID,
   updateTarefa,
+  deleteTarefa,
 };
 
 // Aula API
