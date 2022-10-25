@@ -8,7 +8,8 @@ const controllers = require("../Controllers/TarefasControllers");
 // console.log(controllers);
 
 router.get("/all", controllers.getAll);
+router.get("/:id", controllers.findID);
 router.post("/create", controllers.createtarefa);
-// router.patch("/update:id", controllers.updateTarefa);
+router.patch("/:id", controllers.updateTarefa);
 
 module.exports = router;

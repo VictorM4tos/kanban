@@ -1,4 +1,5 @@
 // gerenciar a requisição e a resposta
+const app = require("../app");
 const tarefasSchema = require("../models/TarefasSchema");
 
 const getAll = async (req, res) => {
@@ -26,13 +27,45 @@ const createtarefa = async (req, res) => {
   }
 };
 
-// const updateTarefa = async (req, res) =>{
+// Buscar tarefa pelo id
+const findID = async (req, res) => {
+  try {
+    const localizaTarefa = req.params.id;
+    const TarefaEncontrada = await tarefasSchema.findById(localizaTarefa);
+    res.status(201).send({
+      message: "Tarefa encontrado",
+      TarefaEncontrada,
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
 
-// }
+// atualizar filme
+
+const updateTarefa = async (req, res) => {
+  try {
+    const localizaTarefa = req.params.id;
+    const novatarefa = req.body;
+    const tarefa = await tarefasSchema.findByIdAndUpdate(
+      localizaTarefa,
+      novatarefa
+    );
+
+    res.status(201).send({
+      message: "Tarefa atualizada",
+      tarefa,
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
 
 module.exports = {
   getAll,
   createtarefa,
+  findID,
+  updateTarefa,
 };
 
 // Aula API
@@ -64,6 +97,15 @@ module.exports = {
 // };
 
 // // Atualizar um filme
-// const updateTarefa = (req, res) => {
-//   // requisição
+// const updateTarefa = async (req, res) => {
+//   //acessar nome a ser atualizado
+//   const requestedTarefa = req.params.tarefa;
+//   console.log("Tarefa localizada,", requestedTarefa);
+//   //exibir nome da a ser atualizado
+//   const requestedNome = req.body.tarefa;
+//   console.log("Tarefa a ser atualziada,", requestedNome);
+
+//   // com o nome encontrar o objeto a ser atualizado
+//   const tarefa = tarefasSchema.find((n) => n.tarefa == requestedTarefa);
+//   console.log("Tarefa Encontrada", tarefa);
 // };
