@@ -13,6 +13,4 @@ const tarefasSchema = new mongoose.Schema({
   },
 });
 
-const tarefas = mongoose.Schema("tarefas", tarefasSchema);
-
-module.exports = tarefas;
+module.exports = mongoose.model("tarefa", tarefasSchema);
