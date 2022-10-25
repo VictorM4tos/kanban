@@ -1,5 +1,5 @@
 // gerenciar a requisição e a resposta
-const tarefas = require("../models/tarefas.json");
+const tarefas = require("../models/TarefasSchema");
 
 // demanda:ver todos as tarefas disponiveis
 const getAll = (req, res) => {

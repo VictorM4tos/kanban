@@ -5,7 +5,7 @@ const router = express.Router();
 
 const controllers = require("../controllers/controllers");
 
-console.log(controllers);
+// console.log(controllers);
 
 router.get("/all", controllers.getAll);
 router.post("/create", controllers.create);
