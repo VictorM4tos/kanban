@@ -1,8 +1,8 @@
 // gerenciar a requisição e a resposta
-const TarefasSchema = require("../models/TarefasSchema");
+const tarefasSchema = require("../models/TarefasSchema");
 
 const getAll = async (req, res) => {
-  TarefasSchema.find(function (err, tarefas) {
+  tarefasSchema.find(function (err, tarefas) {
     if (err) {
       res.status(500).send({ message: err.message });
     }
@@ -12,7 +12,7 @@ const getAll = async (req, res) => {
 
 const createtarefa = async (req, res) => {
   try {
-    const newTarefa = new TarefasSchema(req, body);
+    const newTarefa = new tarefasSchema(req.body);
     console.log("nova tarefa criada", newTarefa);
     const savedTarefa = await newTarefa.save();
     console.log("nova tarefa salva no banco", savedTarefa);
@@ -25,6 +25,10 @@ const createtarefa = async (req, res) => {
     console.error(e);
   }
 };
+
+// const updateTarefa = async (req, res) =>{
+
+// }
 
 module.exports = {
   getAll,
