@@ -3,7 +3,8 @@
 const app = require("./scr/app");
 console.log("Requisição App: ok");
 
-const PORT = 3030;
+const PORT = process.env.PORT;
+// console.log("variaveis de ambiente", process.env); - Exibir se as variaveis de ambiente
 app.listen(PORT, () => {
   console.log(`Servidor Rodando na ${PORT}`);
 });

@@ -10,5 +10,8 @@ app.use(express.json());
 const TarefasRoutes = require("../scr/routes/TarefasRoutes");
 app.use("/tarefas", TarefasRoutes);
 
+// importa o Dotenv --safe para dentro do projeto
+require("dotenv").config();
+
 // ~Deixa disponível as infomações do arquivo app para todo o projeto
 module.exports = app;
