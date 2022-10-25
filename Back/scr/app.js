@@ -13,5 +13,9 @@ app.use("/tarefas", TarefasRoutes);
 // importa o Dotenv --safe para dentro do projeto
 require("dotenv").config();
 
+//conectar banco de dados
+const db = require("./database/kanban");
+db.connect();
+
 // ~Deixa disponível as infomações do arquivo app para todo o projeto
 module.exports = app;
