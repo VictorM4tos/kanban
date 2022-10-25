@@ -11,7 +11,7 @@ const TarefasRoutes = require("../scr/routes/TarefasRoutes");
 app.use("/tarefas", TarefasRoutes);
 
 // importa o Dotenv --safe para dentro do projeto
-require("dotenv").config();
+require("dotenv-safe").config();
 
 //conectar banco de dados
 const db = require("./database/kanban");
