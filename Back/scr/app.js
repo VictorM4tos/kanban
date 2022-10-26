@@ -6,9 +6,13 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
-// Define a rota princial do projeto
-const TarefasRoutes = require("../scr/routes/TarefasRoutes");
+// Define a rota princial para tarefas
+const TarefasRoutes = require("./routes/Routes");
 app.use("/tarefas", TarefasRoutes);
+
+// definir rota de criação de usuário
+const UserRoutes = require("../scr/routes/Routes");
+app.use("/user", UserRoutes);
 
 // importa o Dotenv --safe para dentro do projeto
 require("dotenv-safe").config();
