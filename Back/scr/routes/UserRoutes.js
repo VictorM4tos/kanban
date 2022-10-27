@@ -4,7 +4,7 @@ const express = require("express");
 const router = express.Router();
 
 const UserController = require("../Controllers/UserController");
-const { route } = require("./TarefasRoutes");
+const AuthController = require("../Controllers/AuthController");
 // console.log(controllers);
 
 // Routes UserController
@@ -13,6 +13,6 @@ router.get("/:id", UserController.findId);
 router.post("/create", UserController.createusers);
 router.patch("/:id", UserController.updateUser);
 router.delete("/:id", UserController.deleteUser);
-router.login("/login", UserController, loginUser);
+router.post("/login", AuthController.loginUser);
 
 module.exports = router;
