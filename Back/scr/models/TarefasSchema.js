@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const tarefasSchema = new mongoose.Schema({
-  // id: mongoose.Schema.Types.ObjectId,
+  id: mongoose.Schema.Types.ObjectId,
 
   tarefa: {
     type: String,
