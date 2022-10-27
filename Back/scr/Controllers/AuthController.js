@@ -2,19 +2,17 @@ const UserSchema = require("../models/userSchema");
 const bcrypt = require("bcrypt");
 
 const loginUser = async (req, res) => {
+  const { email} = req.body;
   try {
-    const userID = req.body.email;
-    const findUser = await UserSchema.findById(userID);
-    const validPassword = bcrypt.compareSync(req.body.senha, user.password);
+    const findUser = await UserSchema.findById(email);
+    // const validPassword = await bcrypt.compare(senha, userSchema.senha);
     res.status(201).send({
       message: "Usuário localizado",
       email: `${req.body.email}`,
     });
   } catch (e) {
-    console.log(
-      res.status(401).send({
-        message: "Usuário Não localizado",
-        email: `${req.body.email}`,
+    console.error(
+        "Usuário Não localizado",message
       })
     );
   }
