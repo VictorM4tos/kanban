@@ -3,7 +3,8 @@ const bcrypt = require("bcrypt");
 
 const loginUser = async (req, res) => {
   try {
-    const findUser = await UserSchema.findById(req.body.email);
+    const userID = req.body.email;
+    const findUser = await UserSchema.findById(userID);
     const validPassword = bcrypt.compareSync(req.body.senha, user.password);
     res.status(201).send({
       message: "Usuário localizado",
