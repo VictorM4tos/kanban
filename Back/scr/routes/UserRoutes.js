@@ -3,16 +3,8 @@
 const express = require("express");
 const router = express.Router();
 
-const tarefascontrollers = require("../Controllers/TarefasControllers");
 const UserController = require("../Controllers/UserController");
 // console.log(controllers);
-
-// Router TarefasControllers
-router.get("/all", tarefascontrollers.getAll);
-router.get("/:id", tarefascontrollers.findID);
-router.post("/create", tarefascontrollers.createtarefa);
-router.patch("/:id", tarefascontrollers.updateTarefa);
-router.delete("/:id", tarefascontrollers.deleteTarefa);
 
 // Routes UserController
 router.get("/all", UserController.getAll);
