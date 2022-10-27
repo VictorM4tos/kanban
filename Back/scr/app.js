@@ -11,7 +11,7 @@ const TarefasRoutes = require("./routes/Routes");
 app.use("/tarefas", TarefasRoutes);
 
 // definir rota de criação de usuário
-const UserRoutes = require("../scr/routes/Routes");
+const UserRoutes = require("./routes/Routes");
 app.use("/user", UserRoutes);
 
 // importa o Dotenv --safe para dentro do projeto
