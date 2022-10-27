@@ -1,5 +1,6 @@
 const app = require("../app");
 const UserSchema = require("../models/userSchema");
+const bcrypt = require("bcrypt");
 
 // consultar todos usuário
 const getAll = async (req, res) => {
@@ -17,6 +18,8 @@ const getAll = async (req, res) => {
 
 // criar usuário
 const createusers = async (req, res) => {
+  const hashedPassword = bcrypt.hashSync(req.body.senha, 10);
+  req.body.senha = hashedPassword;
   try {
     const newuser = new UserSchema(req.body);
     const savedUser = await newuser.save();
