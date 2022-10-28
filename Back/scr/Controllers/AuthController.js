@@ -1,5 +1,6 @@
 const UserSchema = require("../models/userSchema");
 const bcrypt = require("bcrypt");
+// const jwt = require("jsonwebtoken");
 
 const loginUser = async (req, res) => {
   try {
@@ -24,6 +25,11 @@ const loginUser = async (req, res) => {
   }
 };
 
+// const token = jwt.sign({ name: user.name }, SECRET);
+// res.status(200).send({
+//   message: "Login autorizado",
+//   token,
+// });
 module.exports = {
   loginUser,
 };
