@@ -6,6 +6,10 @@ const loginUser = async (req, res) => {
   try {
     const finduser = { email: req.body.email };
     const Usuarioencontrado = await UserSchema.findOne(finduser);
+    // res.status(201).send({
+    //   message: "usuário autenticado",
+    //   Usuarioencontrado,
+    // });
     if (!Usuarioencontrado) {
       return res.status(401).send({
         message: "e-mail não localizado",
@@ -15,9 +19,13 @@ const loginUser = async (req, res) => {
       req.body.senha,
       Usuarioencontrado.senha
     );
+    // res.status(201).send({
+    //   message: "usuário autenticado",
+    //   senhaconfir,
+    // });
     if (!senhaconfir) {
       return res.status(401).send({
-        message: "Senha errada",
+        message: "e-mail não localizado",
       });
     }
   } catch (e) {
@@ -30,6 +38,7 @@ const loginUser = async (req, res) => {
 //   message: "Login autorizado",
 //   token,
 // });
+
 module.exports = {
   loginUser,
 };
